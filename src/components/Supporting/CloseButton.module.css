@@ -1,0 +1,11 @@
+.popup__block_close{
+    height: 10%;
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+
+.popup__close_icon{
+    cursor: pointer;
+}

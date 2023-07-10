@@ -1,19 +1,28 @@
 import React, { FC } from "react";
-import { Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
 
+import { AuthProvider } from "./hoc";
 import { MainLayout } from "./layouts";
-import { NotFoundPage, RegisterPage } from "./pages";
+import { CategoriesPage, LoginPage, NotFoundPage, RegisterPage } from "./pages";
 
 const App: FC = () => {
   return (
-    <div
-      className="general__container"
-      style={{ height: "100%", width: "100%" }}
-    >
+    <div className="general__container">
       <Routes>
         <Route path={"/"} element={<MainLayout />}>
-          <Route index={true} element={<RegisterPage />} />
+          <Route index element={<Navigate to={"categories"} />} />
+          <Route
+            path={"categories"}
+            element={
+              <AuthProvider>
+                <CategoriesPage />
+              </AuthProvider>
+            }
+          />
         </Route>
+
+        <Route path={"register"} element={<RegisterPage />} />
+        <Route path={"login"} element={<LoginPage />} />
         <Route path={"*"} element={<NotFoundPage />} />
       </Routes>
     </div>

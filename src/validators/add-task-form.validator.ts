@@ -1,18 +1,17 @@
 import { object, ObjectSchema, string } from "yup";
 
-export const authFormValidator: ObjectSchema<{
+export const addTaskFormValidator: ObjectSchema<{
   name: string;
-  password: string;
 }> = object({
   name: string()
     .required("This field is required")
     .trim()
     .matches(/^[^0-9]*$/, { message: "Only letters" })
-    .min(2, "Minimum 2 letters")
-    .max(50, "Maximum 50 letters"),
-  password: string()
+    .min(5, "Minimum 5 letters")
+    .max(15, "Maximum 15 letters"),
+  description: string()
     .required("This field is required")
     .trim()
-    .min(8, "Minimum 8 letters")
-    .max(20, "Maximum 20 letters"),
+    .min(15, "Minimum 15 letters")
+    .max(200, "Maximum 200 letters"),
 });

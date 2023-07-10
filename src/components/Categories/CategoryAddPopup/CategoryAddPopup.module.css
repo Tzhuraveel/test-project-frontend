@@ -1,0 +1,70 @@
+.popup_wrapper{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    top: 50%;
+    left: 50%;
+    background-color: rgba(128, 128, 128, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup_container {
+    z-index: 3;
+    padding: 15px;
+    height: 300px;
+    width: 300px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--bg-color);
+    border: var(--shadow-blue);
+    box-shadow: var(--shadow-blue);
+}
+
+
+.popup__block_action {
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.popup__form{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.popup__block_error{
+    height: var(--error-height);
+    width: 100%;
+}
+.auth__error_text{
+    color: var(--red-color);
+}
+
+@media (min-width: 1000px) {
+
+    .categories__wrapper {
+        border-radius: 20px;
+        width: 1000px;
+        height: 600px;
+    }
+
+    .add__popup_container{
+        height: 400px;
+        width: 400px;
+    }
+
+
+
+
+}

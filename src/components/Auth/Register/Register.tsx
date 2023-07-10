@@ -1,23 +1,25 @@
 import { useMutation } from "@apollo/client";
-import { TextField } from "@mui/material";
-import { ErrorMessage, Field, Form, Formik } from "formik";
-import { FC } from "react";
+import { FC, useEffect } from "react";
+import { Link, NavigateFunction, useNavigate } from "react-router-dom";
 
-import { REGISTER } from "../../../graphql/mutation/register";
-import { authFormValidator } from "../../../validators";
-import css from "./Register.module.css";
-
-interface IAuthForm {
-  name: string;
-  password: string;
-}
+import { REGISTER } from "../../../graphql";
+import css from "../Auth.module.css";
+import { AuthForm } from "../AuthForm/AuthForm";
+import { IAuthInitialValue } from "../AuthForm/AuthForm.interface";
 
 const Register: FC = () => {
-  const initialValues: IAuthForm = { name: "", password: "" };
-  const [register, { data, error, loading }] = useMutation(REGISTER, {
+  const navigate: NavigateFunction = useNavigate();
+  const [register, { error, data }] = useMutation(REGISTER, {
     errorPolicy: "all",
   });
-  const submit = async (values: IAuthForm) => {
+
+  useEffect(() => {
+    if (data?.register) {
+      navigate("/login");
+    }
+  }, [data]);
+
+  const submit = async (values: IAuthInitialValue): Promise<void> => {
     await register({
       variables: {
         credentials: {
@@ -30,57 +32,17 @@ const Register: FC = () => {
 
   return (
     <div className={css.auth__container}>
-      <h1 className={css.auth__title}>Welcome to True Global</h1>
-      <div>Let's create your account!</div>
-      <div className={css.auth__error_block}>
-        {error?.graphQLErrors.map(({ message }, i) => (
-          <span key={i}>{message}</span>
-        ))}
+      <div className={css.auth__description}>
+        <h1 className={css.auth__title}>Welcome to True Global</h1>
+        <h4 className={css.auth__subtitle}>Let's create your account</h4>
       </div>
-      <div className={css.form__container}>
-        <Formik
-          initialValues={initialValues}
-          onSubmit={submit}
-          validationSchema={authFormValidator}
-          validateOnBlur={true}
-        >
-          <Form className={css.auth__form}>
-            <div className={css.auth__input_container}>
-              <Field name="name" className={css.auth__toper}>
-                {({ field }: any) => (
-                  <TextField
-                    className={css.auth__input}
-                    label="username"
-                    variant="filled"
-                    autoComplete="on"
-                    {...field}
-                  />
-                )}
-              </Field>
-              <div className={css.auth__error_block}>
-                <ErrorMessage name={"name"} />
-              </div>
-              <Field name="password">
-                {({ field }: any) => (
-                  <TextField
-                    className={css.auth__input}
-                    label="password"
-                    variant="filled"
-                    type="password"
-                    autoComplete="on"
-                    {...field}
-                  />
-                )}
-              </Field>
-              <div className={css.auth__error_block}>
-                <ErrorMessage name={"password"} />
-              </div>
-            </div>
-            <button className={css.auth__button} type="submit">
-              Register
-            </button>
-          </Form>
-        </Formik>
+      <div className={css.auth__form_wrapper}>
+        <AuthForm buttonName={"Register"} submit={submit} error={error} />
+        <div className={css.auth__container_navigation}>
+          <Link to={"/login"} className={css.auth__navigation}>
+            I already have an account
+          </Link>
+        </div>
       </div>
     </div>
   );
