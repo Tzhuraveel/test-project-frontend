@@ -1,6 +1,12 @@
 import moment from "moment";
-import { FC } from "react";
+import React, { FC, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
+import style from "../../multiple-styles/popup.module.css";
+import { MultiUseButton } from "../../Supporting";
+import { CategoryActions } from "../CategoryActions/CategoryActions";
+import { CategoryDeletePopup } from "../CategoryDeletePopup/CategoryDeletePopup";
+import { CategoryEditPopup } from "../CategoryEditPopup/CategoryEditiPopup";
 import { ICategory } from "../CategoryList/categoryInterface";
 import css from "./CategoryItem.module.css";
 
@@ -9,6 +15,12 @@ interface IProps {
 }
 
 const CategoryItem: FC<IProps> = ({ category }) => {
+  const navigate = useNavigate();
+
+  const [isOpenActionsPopup, setIsOpenActionsPopup] = useState<boolean>(false);
+  const [isOpenDeletePopup, setIsOpenDeletePopup] = useState<boolean>(false);
+  const [isOpenEditPopup, setIsOpenEditPopup] = useState<boolean>(false);
+
   return (
     <div className={css.category__wrapper}>
       <div className={css.category__container_info}>
@@ -18,6 +30,52 @@ const CategoryItem: FC<IProps> = ({ category }) => {
           {moment(category.dateCreated).format("YYYY.MM.DD")}
         </h4>
       </div>
+      <div className={css.category__actions}>
+        <div
+          onClick={() => setIsOpenActionsPopup(true)}
+          className={css.block__actions_button}
+        >
+          <MultiUseButton contentButton={"actions"} variant={"text"} />
+          {isOpenActionsPopup && (
+            <div
+              className={css.category__actions_wrapper}
+              onClick={() => setIsOpenActionsPopup(false)}
+            >
+              <CategoryActions
+                setIsOpenActionsPopup={setIsOpenActionsPopup}
+                setIsOpenEditPopup={setIsOpenEditPopup}
+                setIsOpenDeletePopup={setIsOpenDeletePopup}
+              />
+            </div>
+          )}
+        </div>
+        <div
+          className={css.block__more_button}
+          onClick={() => {
+            navigate(`/tasks/${category.id}/${category.name}`);
+          }}
+        >
+          <MultiUseButton contentButton={"more"} variant={"text"} />
+        </div>
+      </div>
+      {isOpenActionsPopup && (
+        <div
+          onClick={() => setIsOpenActionsPopup(false)}
+          className={style.popup_wrapper}
+        ></div>
+      )}
+      {isOpenEditPopup && (
+        <CategoryEditPopup
+          category={category}
+          setIsOpenPopup={setIsOpenEditPopup}
+        />
+      )}
+      {isOpenDeletePopup && (
+        <CategoryDeletePopup
+          categoryId={category.id}
+          setIsOpenPopup={setIsOpenDeletePopup}
+        />
+      )}
     </div>
   );
 };

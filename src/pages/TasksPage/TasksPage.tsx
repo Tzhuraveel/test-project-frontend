@@ -1,5 +1,7 @@
+import { TaskList } from "../../components";
+
 const TasksPage = () => {
-  return <div>TasksPage</div>;
+  return <TaskList />;
 };
 
 export { TasksPage };

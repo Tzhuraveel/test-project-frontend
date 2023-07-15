@@ -1,0 +1,43 @@
+.task__wrapper {
+    width: 90%;
+    height: 350px;
+    padding: var(--container-pudding);
+    background-color: #2d2f3f;
+    margin-top: 1rem;
+}
+
+.task__container{
+    height: 100%;
+    width: 100%;
+}
+
+.task__info_container{
+    width: 100%;
+    height: 70%;
+}
+
+.task__actions{
+    width: 100%;
+    height: 30%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.task__description{
+    height: 140px;
+}
+
+@media (min-width: 550px) {
+    .task__wrapper {
+        width: 45%;
+    }
+
+}
+
+@media (min-width: 820px) {
+    .task__wrapper {
+        width: 30%;
+    }
+
+}

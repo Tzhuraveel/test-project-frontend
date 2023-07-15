@@ -6,7 +6,34 @@ export const inputStyle = createTheme({
       styleOverrides: {
         root: {
           width: "100%",
-          height: "40px",
+          height: "60px",
+        },
+      },
+    },
+    MuiInputLabel: {
+      styleOverrides: {
+        root: {
+          color: "gray",
+        },
+      },
+    },
+    MuiInputBase: {
+      styleOverrides: {
+        root: {
+          color: "white",
+          backgroundColor: "#303244;",
+        },
+      },
+    },
+  },
+});
+
+export const textArea = createTheme({
+  components: {
+    MuiTextField: {
+      styleOverrides: {
+        root: {
+          width: "100%",
           marginBottom: "5px",
         },
       },
@@ -21,6 +48,7 @@ export const inputStyle = createTheme({
     MuiInputBase: {
       styleOverrides: {
         root: {
+          height: "130px",
           color: "white",
           backgroundColor: "#303244;",
         },

@@ -15,7 +15,7 @@ const Register: FC = () => {
 
   useEffect(() => {
     if (data?.register) {
-      navigate("/login");
+      navigate("/login", { replace: true });
     }
   }, [data]);
 

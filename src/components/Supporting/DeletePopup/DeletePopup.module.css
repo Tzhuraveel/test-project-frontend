@@ -1,0 +1,28 @@
+.popup__container{
+    z-index: 3;
+    height: 200px;
+    width: 300px;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--bg-color);
+    border: var(--shadow-blue);
+    box-shadow: var(--shadow-blue);
+    padding: 20px;
+}
+
+
+.popup__title{
+    text-align: center;
+    width: 100%;
+    height: 35%;
+}
+
+.popup__block_button{
+    width: 100%;
+    height: 40%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+}

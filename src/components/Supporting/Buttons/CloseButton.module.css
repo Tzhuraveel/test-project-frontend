@@ -2,8 +2,10 @@
     height: 10%;
     width: 100%;
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
     align-items: center;
+    margin-right: 5px;
+    margin-top: 5px;
 }
 
 .popup__close_icon{

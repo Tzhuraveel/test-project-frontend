@@ -3,7 +3,13 @@ import { Navigate, Route, Routes } from "react-router-dom";
 
 import { AuthProvider } from "./hoc";
 import { MainLayout } from "./layouts";
-import { CategoriesPage, LoginPage, NotFoundPage, RegisterPage } from "./pages";
+import {
+  CategoriesPage,
+  LoginPage,
+  NotFoundPage,
+  RegisterPage,
+  TasksPage,
+} from "./pages";
 
 const App: FC = () => {
   return (
@@ -16,6 +22,14 @@ const App: FC = () => {
             element={
               <AuthProvider>
                 <CategoriesPage />
+              </AuthProvider>
+            }
+          />
+          <Route
+            path={"tasks/:categoryId/:categoryName"}
+            element={
+              <AuthProvider>
+                <TasksPage />
               </AuthProvider>
             }
           />

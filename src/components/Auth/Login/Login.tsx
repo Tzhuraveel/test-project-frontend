@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 import { LOGIN } from "../../../graphql";
-import { authService } from "../../../services";
+import { authService, client } from "../../../services";
 import css from "../Auth.module.css";
 import { AuthForm } from "../AuthForm/AuthForm";
 import { IAuthInitialValue } from "../AuthForm/AuthForm.interface";
@@ -13,8 +13,11 @@ const Login = () => {
 
   const [login, { data, error }] = useMutation<ILoginResponse>(LOGIN, {
     errorPolicy: "all",
-    onCompleted: ({ login }) => {
-      authService.setAccessToken(login);
+    onCompleted: (data) => {
+      if (data?.login) {
+        authService.setAccessToken(data.login);
+        client.resetStore().then();
+      }
     },
   });
 

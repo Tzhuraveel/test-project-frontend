@@ -1,0 +1,61 @@
+.form__container{
+    z-index: 3;
+    min-height: 520px;
+    width: 520px;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--bg-color);
+    border: var(--shadow-blue);
+    box-shadow: var(--shadow-blue);
+    padding: var(--container-pudding);
+
+}
+
+.formik__container {
+    height: 90%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.form{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.input__block{
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.input__date_block{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.input__container{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.input__title{
+    margin-bottom:10px;
+}
+
+.button__container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

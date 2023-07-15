@@ -7,6 +7,13 @@ export const GET_ALL_CATEGORIES: DocumentNode = gql`
       name
       dateCreated
       taskCount
+      tasks {
+        id
+        name
+        description
+        dateStart
+        dateEnd
+      }
     }
   }
 `;

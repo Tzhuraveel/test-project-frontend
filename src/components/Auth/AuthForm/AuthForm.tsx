@@ -1,10 +1,12 @@
 import { ApolloError } from "@apollo/client";
 import { Button, TextField, ThemeProvider } from "@mui/material";
-import { ErrorMessage, Field, FieldAttributes, Form, Formik } from "formik";
+import { Field, FieldAttributes, Form, Formik } from "formik";
 import { FC } from "react";
 
 import { inputStyle } from "../../../overrided-style";
 import { authFormValidator } from "../../../validators";
+import { ErrorFromDb } from "../../Supporting";
+import { ErrorFormik } from "../../Supporting/Error/ErrorFormik";
 import { IAuthInitialValue } from "./AuthForm.interface";
 import css from "./AuthForm.module.css";
 
@@ -26,13 +28,7 @@ const AuthForm: FC<IProps> = ({ buttonName, submit, error }) => {
         validateOnBlur={true}
       >
         <Form className={css.auth__form}>
-          <div className={css.auth_error_container}>
-            {error?.graphQLErrors.map(({ message }, i) => (
-              <span className={css.auth__error_text} key={i}>
-                {message}
-              </span>
-            ))}
-          </div>
+          <ErrorFromDb error={error} />
           <div className={css.auth__input_container}>
             <Field name="name">
               {({ field }: FieldAttributes<any>) => (
@@ -47,11 +43,7 @@ const AuthForm: FC<IProps> = ({ buttonName, submit, error }) => {
                 </ThemeProvider>
               )}
             </Field>
-            <div className={css.auth_error_container}>
-              <span className={css.auth__error_text}>
-                <ErrorMessage name={"name"} />
-              </span>
-            </div>
+            <ErrorFormik nameInput={"name"} />
             <Field name="password">
               {({ field }: FieldAttributes<any>) => (
                 <ThemeProvider theme={inputStyle}>
@@ -66,11 +58,7 @@ const AuthForm: FC<IProps> = ({ buttonName, submit, error }) => {
                 </ThemeProvider>
               )}
             </Field>
-            <div className={css.auth_error_container}>
-              <span className={css.auth__error_text}>
-                <ErrorMessage name={"password"} />
-              </span>
-            </div>
+            <ErrorFormik nameInput={"password"} />
           </div>
           <Button
             className={css.auth__button}

@@ -1,8 +1,8 @@
 :root{
-  --greenColor: #7CFC00;
   --bg-color: #15172b;
   --red-color: #ae2222;
   --error-height: 20px;
+  --container-pudding: 15px;
   --whiteColor: white;
   --borderRedius: 10px;
   --bg-additional: #303244;
@@ -15,4 +15,7 @@
   --medium-text: 1.4rem;
   --shadow-blue: 1px 1px 10px 1px #1975d0;
   --border-blue: 2px solid #1975d0;
+  --transform-popup: translate(-50%, -50%);
+  --bg-wrapper-popup: rgba(128, 128, 128, 0.5)
+
 }

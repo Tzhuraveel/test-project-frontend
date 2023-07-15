@@ -1,0 +1,26 @@
+.popup__wrapper_actions {
+    position: absolute;
+    z-index: 3;
+    top: 30px;
+    height: 130px;
+    width: 150px;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--bg-color);
+    border: var(--shadow-blue);
+    box-shadow: var(--shadow-blue);
+}
+
+.popup__container_actions{
+    height: 130px;
+    width: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.popup__button{
+    width: 100%;
+    display: flex;
+}

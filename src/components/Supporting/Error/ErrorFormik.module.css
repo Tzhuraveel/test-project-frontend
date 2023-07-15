@@ -1,0 +1,9 @@
+.block__error{
+    height: var(--error-height);
+    width: 100%;
+}
+
+.error_text{
+    height: 20px;
+    color: var(--red-color);
+}

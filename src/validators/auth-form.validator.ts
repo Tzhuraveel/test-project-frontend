@@ -7,7 +7,7 @@ export const authFormValidator: ObjectSchema<{
   name: string()
     .required("This field is required")
     .trim()
-    .matches(/^[^0-9]*$/, { message: "Only letters" })
+    .matches(/^[a-zA-Z]+$/, { message: "Latin letters only" })
     .min(2, "Minimum 2 letters")
     .max(50, "Maximum 50 letters"),
   password: string()

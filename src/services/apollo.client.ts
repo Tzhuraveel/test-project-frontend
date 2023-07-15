@@ -7,9 +7,9 @@ import {
 import { setContext } from "@apollo/client/link/context";
 import { onError } from "@apollo/client/link/error";
 import { BrowserHistory, createBrowserHistory } from "history";
-const history: BrowserHistory = createBrowserHistory({ window });
 
-import { authService } from "../authService";
+import { authService } from "./authService";
+const history: BrowserHistory = createBrowserHistory({ window });
 
 const httpLink = createHttpLink({
   uri: "http://localhost:5000/graphql",
@@ -31,7 +31,7 @@ const errorLink = onError(({ graphQLErrors }) => {
     if (error?.message === "Unauthorized" || error?.code === "Unauthorized") {
       authService.deleteToken();
 
-      history.replace("login?expSession=true");
+      history.replace("/login?expSession=true");
     }
   });
 });
