@@ -1,4 +1,4 @@
-import { ITask } from "../../Tasks/TaskList/interface";
+import { ITask } from "../../Tasks";
 
 export interface IQueryCategories {
   getAllCategories: ICategory[];

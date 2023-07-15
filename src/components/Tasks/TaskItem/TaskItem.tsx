@@ -4,7 +4,7 @@ import React, { FC, useState } from "react";
 import { MultiUseButton } from "../../Supporting";
 import { TaskDeletePopup } from "../TaskDeletePopup/TaskDeletePopup";
 import { TaskEditPopup } from "../TaskEditPopup/TaskEditPopup";
-import { ITask } from "../TaskList/interface";
+import { ITask } from "../TaskList/task-list-interface";
 import css from "./TaskItem.module.css";
 
 interface IProps {

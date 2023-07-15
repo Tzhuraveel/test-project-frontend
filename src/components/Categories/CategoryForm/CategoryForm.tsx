@@ -4,7 +4,7 @@ import { Field, FieldAttributes, Form, Formik } from "formik";
 import React, { FC } from "react";
 
 import { inputStyle } from "../../../overrided-style";
-import { addCategoryValidator } from "../../../validators";
+import { categoryFormValidator } from "../../../validators";
 import { ErrorFromDb, MultiUseButton } from "../../Supporting";
 import { ErrorFormik } from "../../Supporting/Error/ErrorFormik";
 import css from "./CategoryForm.module.css";
@@ -37,7 +37,7 @@ const CategoryForm: FC<IProps> = ({
       <div className={css.formik__container}>
         <h3 className={css.title}>{categoryInfo.popupTitle}</h3>
         <Formik
-          validationSchema={addCategoryValidator}
+          validationSchema={categoryFormValidator}
           initialValues={initialValues}
           validateOnBlur={true}
           onSubmit={submit}

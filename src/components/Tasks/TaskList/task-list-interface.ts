@@ -1,4 +1,4 @@
-import { ICategory } from "../../Categories/CategoryList/categoryInterface";
+import { ICategory } from "../../Categories/CategoryList/category-list-interface";
 
 export interface ITask {
   id: number;

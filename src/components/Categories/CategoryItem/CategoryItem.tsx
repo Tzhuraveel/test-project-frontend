@@ -7,7 +7,7 @@ import { MultiUseButton } from "../../Supporting";
 import { CategoryActions } from "../CategoryActions/CategoryActions";
 import { CategoryDeletePopup } from "../CategoryDeletePopup/CategoryDeletePopup";
 import { CategoryEditPopup } from "../CategoryEditPopup/CategoryEditiPopup";
-import { ICategory } from "../CategoryList/categoryInterface";
+import { ICategory } from "../CategoryList/category-list-interface";
 import css from "./CategoryItem.module.css";
 
 interface IProps {

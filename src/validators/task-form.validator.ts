@@ -6,14 +6,12 @@ export const taskFormValidator: ObjectSchema<{
   name: string()
     .required("This field is required")
     .trim()
-    .matches(/^[a-zA-Z0-9\s]+$/, { message: "Latin letters only" })
+    .matches(/^([А-ЩЬЮЯҐЄІЇа-щьюяґєії]|[a-zA-Z\s])*$/, {
+      message: "Ukrainian and English letters only",
+    })
     .min(5, "Minimum 5 letters")
     .max(15, "Maximum 15 letters"),
-  description: string()
-    .trim()
-    .matches(/^[a-zA-Z0-9\s]+$/, { message: "Latin letters only" })
-    .max(200, "Maximum 200" + " letters")
-    .nullable(),
+  description: string().trim().max(200, "Maximum 200 letters").nullable(),
   dateStart: date().nullable(),
   dateEnd: date().nullable(),
 });

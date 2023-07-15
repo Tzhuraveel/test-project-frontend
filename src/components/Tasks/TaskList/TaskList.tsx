@@ -6,7 +6,7 @@ import { GET_ALL_TASKS } from "../../../graphql/query/Task";
 import { MultiUseButton } from "../../Supporting";
 import { TaskAddPopup } from "../TaskAddPopup/TaskAddPopup";
 import { TaskItem } from "../TaskItem/TaskItem";
-import { IGetAllTasks, ITask } from "./interface";
+import { IGetAllTasks, ITask } from "./task-list-interface";
 import css from "./TaskList.module.css";
 const TaskList = () => {
   const [tasks, setTasks] = useState<ITask[]>([]);

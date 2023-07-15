@@ -6,7 +6,7 @@ import style from "../../multiple-styles/popup.module.css";
 import { MultiUseButton } from "../../Supporting";
 import { CategoryAddPopup } from "../CategoryAddPopup/CategoryAddPopup";
 import { CategoryItem } from "../CategoryItem/CategoryItem";
-import { ICategory, IQueryCategories } from "./categoryInterface";
+import { ICategory, IQueryCategories } from "./category-list-interface";
 import css from "./CategoryList.module.css";
 
 const CategoryList: FC = () => {

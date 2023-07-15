@@ -5,7 +5,7 @@ import { EDIT_CATEGORY } from "../../../graphql";
 import { client } from "../../../services";
 import css from "../../multiple-styles/popup.module.css";
 import { CategoryForm } from "../CategoryForm/CategoryForm";
-import { ICategory } from "../CategoryList/categoryInterface";
+import { ICategory } from "../CategoryList/category-list-interface";
 import { ICategoryInitialValue } from "../interfaces/category-initial-value.interface";
 
 interface IProps {

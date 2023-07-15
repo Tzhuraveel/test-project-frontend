@@ -7,7 +7,7 @@ import { client } from "../../../services";
 import css from "../../multiple-styles/popup.module.css";
 import { ITaskValue } from "../interfaces/task-edit-interface";
 import { TaskForm } from "../TaskForm/TaskForm";
-import { ITask } from "../TaskList/interface";
+import { ITask } from "../TaskList/task-list-interface";
 interface IProps {
   task: ITask;
   setIsOpenPopup: React.Dispatch<React.SetStateAction<boolean>>;

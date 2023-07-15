@@ -28,8 +28,9 @@
 }
 
 .task__description{
-    height: 140px;
+    height: 160px;
     width: 100%;
+    word-wrap: break-word;
 }
 
 @media (min-width: 550px) {
