@@ -43,18 +43,8 @@
     align-items: center;
 }
 
-@media (min-width: 820px) {
-
-
-}
 
 @media (min-width: 1000px) {
-
-    .tasks__container {
-        flex-direction: row;
-        align-content: flex-start;
-        justify-content: space-evenly;
-    }
 
     .tasks__wrapper {
         border-radius: 20px;

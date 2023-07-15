@@ -22,9 +22,6 @@ const TaskList = () => {
     variables: {
       categoryId: categoryId ? +categoryId : null,
     },
-    onError: (error) => {
-      console.warn(error);
-    },
   });
 
   useEffect(() => {

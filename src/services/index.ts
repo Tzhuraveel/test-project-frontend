@@ -1,2 +1,2 @@
-export * from "./apollo.client";
+export * from "./apolloClient";
 export * from "./authService";

@@ -28,7 +28,7 @@ const TaskItem: FC<IProps> = ({ task }) => {
             end date:
             {task.dateEnd ? moment(task.dateEnd).format("YYYY.MM.DD") : ""}
           </p>
-          <div className={css.task__description}>{task.description}</div>
+          <p className={css.task__description}>{task.description}</p>
         </div>
         <div className={css.task__actions}>
           <div onClick={() => setIsOpenDeletePopup(true)}>

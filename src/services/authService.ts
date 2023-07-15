@@ -16,10 +16,6 @@ class AuthService {
   public deleteToken() {
     localStorage.removeItem(this.accessToken);
   }
-
-  public isAuthenticated(): boolean {
-    return !!localStorage.getItem(this.accessToken);
-  }
 }
 
 export const authService = new AuthService();

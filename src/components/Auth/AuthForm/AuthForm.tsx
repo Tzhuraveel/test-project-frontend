@@ -7,7 +7,7 @@ import { inputStyle } from "../../../overrided-style";
 import { authFormValidator } from "../../../validators";
 import { ErrorFromDb } from "../../Supporting";
 import { ErrorFormik } from "../../Supporting/Error/ErrorFormik";
-import { IAuthInitialValue } from "./AuthForm.interface";
+import { IAuthInitialValue } from "./authForm.interface";
 import css from "./AuthForm.module.css";
 
 interface IProps {

@@ -8,11 +8,12 @@ import { setContext } from "@apollo/client/link/context";
 import { onError } from "@apollo/client/link/error";
 import { BrowserHistory, createBrowserHistory } from "history";
 
+import { baseUrl } from "../constant";
 import { authService } from "./authService";
 const history: BrowserHistory = createBrowserHistory({ window });
 
 const httpLink = createHttpLink({
-  uri: "http://localhost:5000/graphql",
+  uri: baseUrl,
 });
 
 const authLink: ApolloLink = setContext((_, { headers }) => {

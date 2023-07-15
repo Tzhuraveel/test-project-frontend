@@ -5,7 +5,7 @@ import { Link, NavigateFunction, useNavigate } from "react-router-dom";
 import { REGISTER } from "../../../graphql";
 import css from "../Auth.module.css";
 import { AuthForm } from "../AuthForm/AuthForm";
-import { IAuthInitialValue } from "../AuthForm/AuthForm.interface";
+import { IAuthInitialValue } from "../AuthForm/authForm.interface";
 
 const Register: FC = () => {
   const navigate: NavigateFunction = useNavigate();

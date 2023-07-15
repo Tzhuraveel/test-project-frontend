@@ -6,7 +6,7 @@ import { LOGIN } from "../../../graphql";
 import { authService, client } from "../../../services";
 import css from "../Auth.module.css";
 import { AuthForm } from "../AuthForm/AuthForm";
-import { IAuthInitialValue } from "../AuthForm/AuthForm.interface";
+import { IAuthInitialValue } from "../AuthForm/authForm.interface";
 import { ILoginResponse } from "./login.interface";
 const Login = () => {
   const navigate = useNavigate();
