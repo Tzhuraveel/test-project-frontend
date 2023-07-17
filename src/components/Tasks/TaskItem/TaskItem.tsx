@@ -22,11 +22,15 @@ const TaskItem: FC<IProps> = ({ task }) => {
           <h2>{task.name}</h2>
           <p>
             start date:
-            {task.dateStart ? moment(task.dateStart).format("YYYY.MM.DD") : ""}
+            {task.dateStart
+              ? ` ${moment(task.dateStart).format("YYYY.MM.DD")}`
+              : ""}
           </p>
           <p>
             end date:
-            {task.dateEnd ? moment(task.dateEnd).format("YYYY.MM.DD") : ""}
+            {task.dateEnd
+              ? ` ${moment(task.dateEnd).format("YYYY.MM.DD")}`
+              : ""}
           </p>
           <p className={css.task__description}>{task.description}</p>
         </div>
